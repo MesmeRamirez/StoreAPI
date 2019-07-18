@@ -1,0 +1,6 @@
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.deps.json
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.csprojAssemblyReference.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.csproj.CoreCompileInputs.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.AssemblyInfoInputs.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.AssemblyInfo.cs
