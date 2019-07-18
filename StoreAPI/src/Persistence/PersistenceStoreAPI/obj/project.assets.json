@@ -1344,6 +1344,20 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "ModelStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/ModelStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelStoreAPI.dll": {}
+        }
       }
     }
   },
@@ -4504,6 +4518,11 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "ModelStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Common/ModelStoreAPI/ModelStoreAPI.csproj",
+      "msbuildProject": "../../Common/ModelStoreAPI/ModelStoreAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4511,7 +4530,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.6",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.6",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "ModelStoreAPI >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4543,7 +4563,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\ModelStoreAPI\\ModelStoreAPI.csproj": {
+              "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\ModelStoreAPI\\ModelStoreAPI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
