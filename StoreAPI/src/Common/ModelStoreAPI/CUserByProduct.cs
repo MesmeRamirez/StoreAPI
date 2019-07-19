@@ -5,8 +5,10 @@ namespace ModelStoreAPI
 {
     //COMENTARIO:
     //Clase que almacena los productos que fueron adquiridos por un usuario, la cantidad y la fecha de compra.
-    class CUserByProduct
+    public class CUserByProduct
     {
+        public int Id { get; set; }
+
         public CUser User { get; set; }
         public string IdUser { get; set; }
 

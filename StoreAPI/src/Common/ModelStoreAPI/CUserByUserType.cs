@@ -2,12 +2,14 @@
 {
     //COMENTARIO:
     //Clase que almacena la asignacion de un perfil a un usuario
-    class CUserByUserType
+    public class CUserByUserType
     {
+        public int Id { get; set; }
+
         public CUser User { get; set; }
         public string IdUser { get; set; }
 
-        public CUserType UserType { get; set; }
+        public IdentityRole UserType { get; set; }
         public int IdUserType { get; set; }
     }
 }

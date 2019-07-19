@@ -2,7 +2,7 @@
 {
     //COMENTARIO:
     //Clase que almacena que usuario le dio like a un producto.
-    class CLikeProduct
+    public class CLikeByProduct
     {
         public long Id { get; set; }
 

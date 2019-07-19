@@ -1,0 +1,9 @@
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.deps.json
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csprojAssemblyReference.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csproj.CoreCompileInputs.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.AssemblyInfoInputs.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.AssemblyInfo.cs
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.pdb

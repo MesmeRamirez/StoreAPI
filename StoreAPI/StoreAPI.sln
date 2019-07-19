@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3F5B37F7-A52C-45E9-84FC-1EE7840E7A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreAPI", "src\APIs\StoreAPI\StoreAPI.csproj", "{AE5238A9-F18D-4C05-8082-0715D2608B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreAPI", "src\APIs\StoreAPI\StoreAPI.csproj", "{AE5238A9-F18D-4C05-8082-0715D2608B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonStoreAPI", "src\Common\CommonStoreAPI\CommonStoreAPI.csproj", "{125FD592-58CE-43AD-A20A-DCCDFD55042E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonStoreAPI", "src\Common\CommonStoreAPI\CommonStoreAPI.csproj", "{125FD592-58CE-43AD-A20A-DCCDFD55042E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelStoreAPI", "src\Common\ModelStoreAPI\ModelStoreAPI.csproj", "{5A29C557-85D4-4E58-BD14-066BA3DD028D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelStoreAPI", "src\Common\ModelStoreAPI\ModelStoreAPI.csproj", "{5A29C557-85D4-4E58-BD14-066BA3DD028D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceStoreAPI", "src\Persistence\PersistenceStoreAPI\PersistenceStoreAPI.csproj", "{5EC21D34-D718-4A32-95BA-C0E58A81CEB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistenceStoreAPI", "src\Persistence\PersistenceStoreAPI\PersistenceStoreAPI.csproj", "{5EC21D34-D718-4A32-95BA-C0E58A81CEB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceStoreAPI", "src\Service\ServiceStoreAPI\ServiceStoreAPI.csproj", "{8C7A7F25-6898-47EA-BEF6-38D02A0A3209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceStoreAPI", "src\Service\ServiceStoreAPI\ServiceStoreAPI.csproj", "{8C7A7F25-6898-47EA-BEF6-38D02A0A3209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationStoreAPI", "src\APIs\AuthenticationStoreAPI\AuthenticationStoreAPI.csproj", "{B10E1F27-7659-4FAD-9DB6-664B7226FC48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{8C7A7F25-6898-47EA-BEF6-38D02A0A3209}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C7A7F25-6898-47EA-BEF6-38D02A0A3209}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C7A7F25-6898-47EA-BEF6-38D02A0A3209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10E1F27-7659-4FAD-9DB6-664B7226FC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10E1F27-7659-4FAD-9DB6-664B7226FC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10E1F27-7659-4FAD-9DB6-664B7226FC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10E1F27-7659-4FAD-9DB6-664B7226FC48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{5A29C557-85D4-4E58-BD14-066BA3DD028D} = {3F5B37F7-A52C-45E9-84FC-1EE7840E7A89}
 		{5EC21D34-D718-4A32-95BA-C0E58A81CEB0} = {1DE04E1F-4133-4EF0-9D1A-410298CE22E5}
 		{8C7A7F25-6898-47EA-BEF6-38D02A0A3209} = {4E3A997F-E785-4A8D-8E16-A370FB24FB4E}
+		{B10E1F27-7659-4FAD-9DB6-664B7226FC48} = {FCC7097D-340F-48B6-9C46-3D629E736814}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65D99128-DF52-4189-9362-F064EB24161B}

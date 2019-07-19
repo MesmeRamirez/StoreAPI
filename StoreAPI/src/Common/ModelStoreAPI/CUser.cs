@@ -7,5 +7,7 @@ namespace ModelStoreAPI
 {
     public class CUser : IdentityUser
     {
+        public string Image { get; set; }
+        public string UserURL { get; set; }
     }
 }
