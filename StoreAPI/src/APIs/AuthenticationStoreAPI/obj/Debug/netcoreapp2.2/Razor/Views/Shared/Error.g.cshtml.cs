@@ -18,8 +18,13 @@ using AuthenticationStoreAPI.Controllers;
 
 #line default
 #line hidden
+#line 2 "C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\Views\_ViewImports.cshtml"
+using AuthenticationStoreAPI.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f2f97a0ff573dd0435e6bb2f49d1b5e36633ab1", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a5cb5ca35902c59adfbe39754c6c63aec414d10b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"232ad07487180f70c3599fa877c3e5cb4a5e3d2e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

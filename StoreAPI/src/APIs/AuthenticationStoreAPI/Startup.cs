@@ -33,7 +33,20 @@ namespace AuthenticationStoreAPI
 
             services.AddDbContext<AppDB>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<CUser, IdentityRole>().AddEntityFrameworkStores<AppDB>().AddDefaultTokenProviders();
+            //Se setean las consideraciones para las contrasenas.
+            services.AddIdentity<CUser, IdentityRole>
+                (
+                    identityoptions =>
+                    {
+                        identityoptions.Password.RequireDigit = true;
+                        identityoptions.Password.RequiredLength = 6;
+                        identityoptions.Password.RequireNonAlphanumeric = false;
+                        identityoptions.Password.RequireUppercase = true;
+                        identityoptions.Password.RequireLowercase = false;
+                        identityoptions.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.";
+                        identityoptions.User.RequireUniqueEmail = true;
+                    }
+                ).AddEntityFrameworkStores<AppDB>().AddDefaultTokenProviders();
 
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()

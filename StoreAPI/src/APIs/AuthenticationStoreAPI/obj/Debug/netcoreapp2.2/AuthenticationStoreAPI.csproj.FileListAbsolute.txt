@@ -42,3 +42,4 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationS
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.Views.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
