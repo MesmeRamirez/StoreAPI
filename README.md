@@ -1,6 +1,8 @@
 # StoreAPI
 StoreAPI coding challenge for Applaudo Studios
 
+Se ha tokenizado la API utilizando autorizacion valida de tipo "Bearer token" de JWT.
+
 AUTHENTICATION.
 
 The authentication uses de UserName for Login, not the email.

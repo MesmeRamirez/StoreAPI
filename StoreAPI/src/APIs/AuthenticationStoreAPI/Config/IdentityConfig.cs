@@ -38,8 +38,8 @@ namespace AuthenticationStoreAPI.Config
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
                     RequireConsent = false,
                     ClientSecrets = {new Secret(configuration.GetValue<string>("Client:SecretKey").Sha256())},
-                    RedirectUris = { $"signin"},
-                    PostLogoutRedirectUris = { $"signout"},
+                    RedirectUris = { $"{configuration.GetValue<string>("Client:URL")}signin-oidc"},
+                    PostLogoutRedirectUris = { $"{configuration.GetValue<string>("Client:URL")}signout-callback-oidc"},
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,

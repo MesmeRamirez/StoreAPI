@@ -136,6 +136,10 @@ namespace AuthenticationStoreAPI.Controllers
                 
                 if (result.Succeeded)
                 {
+                    if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
                     return Redirect("~/");
                 }
                 ModelState.AddModelError(string.Empty, AccountOptions.InvalidCredentialsErrorMessage);

@@ -1,9 +1,9 @@
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.deps.json
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.dll
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.csprojAssemblyReference.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.csproj.CoreCompileInputs.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.AssemblyInfoInputs.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.AssemblyInfo.cs
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\ModelStoreAPI\obj\Debug\netcoreapp2.2\ModelStoreAPI.csprojAssemblyReference.cache
