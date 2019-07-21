@@ -6,4 +6,6 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAP
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.AssemblyInfo.cs
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.pdb
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csprojAssemblyReference.cache
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csproj.CopyComplete

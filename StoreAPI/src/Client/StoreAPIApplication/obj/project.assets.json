@@ -4438,6 +4438,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "CommonStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        }
       }
     }
   },
@@ -12066,10 +12076,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "CommonStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj",
+      "msbuildProject": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "CommonStoreAPI >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
@@ -12104,7 +12120,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj": {
+              "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

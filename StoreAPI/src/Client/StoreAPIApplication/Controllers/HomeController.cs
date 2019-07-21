@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using CommonStoreAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StoreAPIApplication.Models;
 
 namespace StoreAPIApplication.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+
+        private readonly ICurrentUser _currentUser;
+
+        public HomeController(ICurrentUser currentUser)
+        {
+            _currentUser = currentUser;
+        }
+
         public IActionResult Index()
         {
             return View();

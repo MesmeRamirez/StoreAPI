@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "StoreAPIApplication/1.0.0": {
         "dependencies": {
+          "CommonStoreAPI": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0"
@@ -33,6 +34,14 @@
         },
         "compile": {
           "StoreAPIApplication.dll": {}
+        }
+      },
+      "CommonStoreAPI/1.0.0": {
+        "runtime": {
+          "CommonStoreAPI.dll": {}
+        },
+        "compile": {
+          "CommonStoreAPI.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3233,6 +3242,11 @@
   },
   "libraries": {
     "StoreAPIApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommonStoreAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
