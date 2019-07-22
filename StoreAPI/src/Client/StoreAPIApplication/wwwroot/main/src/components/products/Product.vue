@@ -1,5 +1,5 @@
 <template>
-<el-container v-loading="loading">
+<el-container>
 <el-main>
       <el-table :data="tableData">
         <el-table-column prop="ProductName" label="Product Name" width="140">
@@ -28,12 +28,7 @@
 <script>
 export default {
   name: 'Product',
-  created(){
-    let self = this;
-    self.get()
-  },
-  data: () => ({
-    loading=true,
+  data: () => {
     return {
       form: {
           ProductName: null,
@@ -41,16 +36,14 @@ export default {
           Price: null
       }
     };    
-  }),
+  },
   methods: {
     getAll(){
       let self = this;
       self.$store.state.services.productService.getAll(10)
       .then(r => {
-        self.loading = false;
         self.data = r.data;
       }).catch(r => {
-        self.loading = false;
         console.log(r);
       })
     }

@@ -43,5 +43,14 @@ namespace StoreAPI.Controllers
                 await _productService.GetAll(list)
                 );
         }
+
+        // POST
+        [HttpPost("products")]
+        public async Task<IActionResult> ProductPut([FromBody] ProductCreateDto model)
+        {
+            await _productService.Create(model);
+            return NoContent();
+        }
+
     }
 }

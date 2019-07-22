@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Newtonsoft.Json;
+using ModelStoreAPI;
 
 namespace ServiceStoreAPI
 {
@@ -16,6 +17,8 @@ namespace ServiceStoreAPI
         Task<ProductDto> Get(int id);
         Task<bool> PartialUpdate(int id, ProductDtoPartial model);
         Task<IEnumerable<ProductDto>> GetAll(ProductList list);
+        Task<bool> Create(ProductCreateDto model);
+
     }
 
     public class ProductService : IProductService
@@ -114,6 +117,31 @@ namespace ServiceStoreAPI
                     ).Take(list.Take);
                     result = await query.ToListAsync();
                 }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
+        public async Task<bool> Create(ProductCreateDto model)
+        {
+            var result = false;
+
+            try
+            {
+                _context.Product.Add(new CProduct
+                {
+                    ProductName = model.ProductName,
+                    Quantity = model.Quantity,
+                    Price = model.Price
+                });
+
+                await _context.SaveChangesAsync();
+
+                result = true;
             }
             catch (Exception e)
             {
