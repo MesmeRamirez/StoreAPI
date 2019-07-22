@@ -5,6 +5,9 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIAppli
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\StoreAPIApplication.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\StoreAPIApplication.Views.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\StoreAPIApplication.Views.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.csprojAssemblyReference.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.csproj.CoreCompileInputs.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.RazorAssemblyInfo.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.RazorAssemblyInfo.cs
@@ -24,9 +27,6 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIAppli
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.RazorTargetAssemblyInfo.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.RazorTargetAssemblyInfo.cs
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.Views.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.pdb
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.csproj.CopyComplete
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\obj\Debug\netcoreapp2.2\StoreAPIApplication.csprojAssemblyReference.cache

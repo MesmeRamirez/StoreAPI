@@ -23,8 +23,13 @@ using CommonStoreAPI;
 
 #line default
 #line hidden
+#line 3 "C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\Views\_ViewImports.cshtml"
+using StoreAPIApplication.Config;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c3339b662f082ce0c593a51f20f0511c192d895b", @"/Views/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c71861a1ef6a89e4eac5fcd991092fc1191ef66", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7390a99fa8ee0a5dbe31198f4527fc07951934bb", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -54,7 +59,7 @@ using CommonStoreAPI;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 169, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3339b662f082ce0c593a51f20f0511c192d895b3473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3339b662f082ce0c593a51f20f0511c192d895b3663", async() => {
                 BeginContext(31, 156, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Party Store - El Salvador</title>\r\n");
                 EndContext();
@@ -74,7 +79,7 @@ using CommonStoreAPI;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(196, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3339b662f082ce0c593a51f20f0511c192d895b4820", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3339b662f082ce0c593a51f20f0511c192d895b5010", async() => {
                 BeginContext(202, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();

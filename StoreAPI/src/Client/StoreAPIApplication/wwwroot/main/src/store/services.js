@@ -1,9 +1,12 @@
 import Axios from 'axios'
-import exampleService from '../services/ExampleService'
+import productService from '../services/ProductService'
+import userService from '../services/UserService'
 
 // Axios Configuration
 Axios.defaults.headers.common.Accept = 'application/json'
+Axios.defaults.headers.common.Authorization = 'bearer ${user.Token}'
 
 export default {
-    exampleService: new exampleService(Axios)
+    productService: new productService(Axios, window.Api.URL),
+    userService: new userService(Axios, window.Api.URL)
 }

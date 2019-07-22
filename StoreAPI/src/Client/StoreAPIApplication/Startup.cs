@@ -48,6 +48,7 @@ namespace StoreAPIApplication
                   options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Uri, ClaimTypes.Uri, ClaimTypes.Uri));
                   options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Email, ClaimTypes.Email, ClaimTypes.Email));
                   options.ClaimActions.Add(new JsonKeyClaimAction("ImageProfile", "ImageProfile", "ImageProfile"));
+                  options.ClaimActions.Add(new JsonKeyClaimAction("UserName", "UserName", "UserName"));
 
                   options.Events = new OpenIdConnectEvents
                   {
@@ -77,6 +78,8 @@ namespace StoreAPIApplication
             //});
 
             services.AddMyDependencies(Configuration);
+
+            Parameters.ApiURL = Configuration["Api:URL"];
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

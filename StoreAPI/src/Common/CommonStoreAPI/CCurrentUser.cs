@@ -35,6 +35,11 @@ namespace CommonStoreAPI
                     result.UserId = claims.Where(x => x.Type.Equals("sub")).First().Value;
                 }
 
+                if (claims.Any(x => x.Type.Equals("UserName")))
+                {
+                    result.UserName = claims.Where(x => x.Type.Equals("UserName")).First().Value;
+                }
+
                 if (claims.Any(x => x.Type.Equals(ClaimTypes.Email)))
                 {
                     result.Email = claims.Where(x => x.Type.Equals(ClaimTypes.Email)).First().Value;
@@ -61,5 +66,6 @@ namespace CommonStoreAPI
         public string Email { get; set; }
         public string Image { get; set; }
         public string Token { get; set; }
+        public string UserName { get; set; }
     }
 }

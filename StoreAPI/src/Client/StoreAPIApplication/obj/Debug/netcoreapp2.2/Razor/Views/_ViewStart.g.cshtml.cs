@@ -23,8 +23,13 @@ using CommonStoreAPI;
 
 #line default
 #line hidden
+#line 3 "C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Client\StoreAPIApplication\Views\_ViewImports.cshtml"
+using StoreAPIApplication.Config;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c71861a1ef6a89e4eac5fcd991092fc1191ef66", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7390a99fa8ee0a5dbe31198f4527fc07951934bb", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

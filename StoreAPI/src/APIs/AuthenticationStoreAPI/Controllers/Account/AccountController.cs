@@ -132,17 +132,23 @@ namespace AuthenticationStoreAPI.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(model.Username);
-                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberLogin, true);
-                
-                if (result.Succeeded)
+
+                if (user == null)
                 {
-                    if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
-                    {
-                        return Redirect(model.ReturnUrl);
-                    }
-                    return Redirect("~/");
+                    ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
                 }
-                ModelState.AddModelError(string.Empty, AccountOptions.InvalidCredentialsErrorMessage);
+                else
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberLogin, true);
+                    if (result.Succeeded)
+                        {
+                            if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
+                            {
+                                return Redirect(model.ReturnUrl);
+                            }
+                            return Redirect("~/");
+                        }
+                }          
             }
 
             // something went wrong, show form with error

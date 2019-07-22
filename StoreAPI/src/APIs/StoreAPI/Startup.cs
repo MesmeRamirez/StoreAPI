@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PersistenceStoreAPI;
 using Microsoft.EntityFrameworkCore;
+using StoreAPI.Config;
 
 namespace StoreAPI
 {
@@ -22,12 +23,23 @@ namespace StoreAPI
         {
             services.AddDbContext<AppDB>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddMyDependencies(Configuration);
+
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(options =>
             {
                 options.Authority = Configuration["AuthenticationStoreAPI:URL"];
                 options.RequireHttpsMetadata = false;
                 options.ApiName = Configuration["AuthenticationStoreAPI:APIName"];
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                    builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
+                );
+            });
+
+            StoreAPIMapps.Initialize();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -46,6 +58,7 @@ namespace StoreAPI
             //}
 
             app.UseAuthentication();
+            app.UseCors("AllowSpecificOrigin");
             //app.UseHttpsRedirection();
             app.UseMvc();
         }

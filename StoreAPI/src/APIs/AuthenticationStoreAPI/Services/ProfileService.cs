@@ -25,6 +25,7 @@ namespace AuthenticationStoreAPI.Services
 
             var claims = new List<Claim>
             {
+                new Claim("UserName", user.UserName ?? ""),
                 new Claim(ClaimTypes.Uri, user.UserURL ?? ""),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim("ImageProfile", user.Image ?? "")

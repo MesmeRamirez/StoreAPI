@@ -1,8 +1,14 @@
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\ServiceStoreAPI.deps.json
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\ServiceStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\ServiceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.csprojAssemblyReference.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.csproj.CoreCompileInputs.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.AssemblyInfoInputs.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.AssemblyInfo.cs
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.pdb

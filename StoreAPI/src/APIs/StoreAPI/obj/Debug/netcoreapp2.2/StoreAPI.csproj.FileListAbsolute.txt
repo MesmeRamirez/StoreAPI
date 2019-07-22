@@ -3,9 +3,13 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\De
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\StoreAPI.runtimeconfig.dev.json
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\StoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\StoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\ServiceStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\ServiceStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\obj\Debug\netcoreapp2.2\StoreAPI.csprojAssemblyReference.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\StoreAPI\obj\Debug\netcoreapp2.2\StoreAPI.csproj.CoreCompileInputs.cache

@@ -1,15 +1,16 @@
 <template>
 <div>
-<h2>Example Module</h2>
+<h2>Products</h2>
 <div v-loading="loading">
   <el-table :data="items" :default-sort = "{prop: 'title', order: 'ascending'}" style="width: 100%">
-    <el-table-column prop="id" label="Id" sortable width="50"></el-table-column>
-    <el-table-column prop="title" label="Títutlo" sortable>
+    <el-table-column prop="Id" label="Product Id" sortable width="50"></el-table-column>
+    <el-table-column prop="ProductName" label="Product Name" sortable>
       <template slot-scope="scope">
         <a :href="'#/example/' + scope.row.id">{{ scope.row.title }}</a>
       </template>
     </el-table-column>
-    <el-table-column prop="body" label="Mensaje"></el-table-column>
+    <el-table-column prop="Quantity" label="Quantity in stock"></el-table-column>
+    <el-table-column prop="Price" label="Price"></el-table-column>
   </el-table>
 </div>
 </div>

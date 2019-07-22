@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "IdentityModel/3.10.0": {
         "type": "package",
         "dependencies": {
@@ -2766,7 +2779,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -4481,6 +4494,16 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "CommonStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        }
+      },
       "ModelStoreAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -4509,10 +4532,42 @@
         "runtime": {
           "bin/placeholder/PersistenceStoreAPI.dll": {}
         }
+      },
+      "ServiceStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "AutoMapper": "8.1.1",
+          "Newtonsoft.Json": "12.0.2",
+          "PersistenceStoreAPI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ServiceStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ServiceStoreAPI.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/8.1.1": {
+      "sha512": "GKBliBukkLG0z/U0T4Jy+yEpr5bKDImQ9nEy/T8jqNulwNkWDjiEWa9TL4yCxIhleDbmVmw2xYSaJ3Eb2OcSUg==",
+      "type": "package",
+      "path": "automapper/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.1.1.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "IdentityModel/3.10.0": {
       "sha512": "PJ8F5HOauI52OhiJZ7E46/AyNmqKMOWGmruHx6Ajv2evNFB/9P+MknY72zr8V5cjnwbVPDHNUS3IUUSG/l3/kA==",
       "type": "package",
@@ -7457,12 +7512,13 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -7482,7 +7538,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -12189,6 +12245,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "CommonStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj",
+      "msbuildProject": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj"
+    },
     "ModelStoreAPI/1.0.0": {
       "type": "project",
       "path": "../../Common/ModelStoreAPI/ModelStoreAPI.csproj",
@@ -12198,15 +12259,23 @@
       "type": "project",
       "path": "../../Persistence/PersistenceStoreAPI/PersistenceStoreAPI.csproj",
       "msbuildProject": "../../Persistence/PersistenceStoreAPI/PersistenceStoreAPI.csproj"
+    },
+    "ServiceStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Service/ServiceStoreAPI/ServiceStoreAPI.csproj",
+      "msbuildProject": "../../Service/ServiceStoreAPI/ServiceStoreAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AutoMapper >= 8.1.1",
+      "CommonStoreAPI >= 1.0.0",
       "IdentityServer4.AccessTokenValidation >= 2.7.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "PersistenceStoreAPI >= 1.0.0"
+      "PersistenceStoreAPI >= 1.0.0",
+      "ServiceStoreAPI >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12239,8 +12308,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+            "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj": {
+              "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj"
+            },
             "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Persistence\\PersistenceStoreAPI\\PersistenceStoreAPI.csproj": {
               "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Persistence\\PersistenceStoreAPI\\PersistenceStoreAPI.csproj"
+            },
+            "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Service\\ServiceStoreAPI\\ServiceStoreAPI.csproj": {
+              "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Service\\ServiceStoreAPI\\ServiceStoreAPI.csproj"
             }
           }
         }
@@ -12254,6 +12329,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[8.1.1, )"
+          },
           "IdentityServer4.AccessTokenValidation": {
             "target": "Package",
             "version": "[2.7.0, )"
