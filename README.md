@@ -6,6 +6,8 @@ https://documenter.getpostman.com/view/8166245/SVSPmmCe
 
 Database dump:
 File in Git named: Database.sql
+ConnectionString: "Server=localhost\\SQLEXPRESS;Database=StoreAPI;Trusted_Connection=True"
+SQL Server
 
 Comments:
 1. For front end I have build an SPA using VUE.JS
