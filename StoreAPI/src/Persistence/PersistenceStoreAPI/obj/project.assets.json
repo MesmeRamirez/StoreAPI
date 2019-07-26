@@ -1345,6 +1345,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "CommonStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        }
+      },
       "ModelStoreAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -4519,6 +4529,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "CommonStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj",
+      "msbuildProject": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj"
+    },
     "ModelStoreAPI/1.0.0": {
       "type": "project",
       "path": "../../Common/ModelStoreAPI/ModelStoreAPI.csproj",
@@ -4527,6 +4542,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "CommonStoreAPI >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.6",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.6",
@@ -4564,6 +4580,9 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+            "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj": {
+              "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\CommonStoreAPI\\CommonStoreAPI.csproj"
+            },
             "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\ModelStoreAPI\\ModelStoreAPI.csproj": {
               "projectPath": "C:\\Users\\Javier\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI\\src\\Common\\ModelStoreAPI\\ModelStoreAPI.csproj"
             }

@@ -18,7 +18,7 @@ namespace ServiceStoreAPI
         Task<bool> PartialUpdate(int id, ProductDtoPartial model);
         Task<IEnumerable<ProductDto>> GetAll(ProductList list);
         Task<bool> Create(ProductCreateDto model);
-
+        Task<bool> Remove(int id);
     }
 
     public class ProductService : IProductService
@@ -136,16 +136,41 @@ namespace ServiceStoreAPI
                 {
                     ProductName = model.ProductName,
                     Quantity = model.Quantity,
-                    Price = model.Price
+                    Price = model.Price,
+                    UserId = model.UserId
                 });
 
                 await _context.SaveChangesAsync();
-
+                
                 result = true;
             }
             catch (Exception e)
             {
 
+            }
+
+            return result;
+        }
+
+        public async Task<bool> Remove(int id)
+        {
+            var result = false;
+
+            try
+            {
+                var product = await _context.Product.SingleOrDefaultAsync(x => x.Id == id);
+
+                if (product != null)
+                {
+                    product.Deleted = true;
+                    _context.Update(product);
+
+                    await _context.SaveChangesAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                // Error logging
             }
 
             return result;

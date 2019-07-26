@@ -1339,6 +1339,16 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "CommonStoreAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonStoreAPI.dll": {}
+        }
+      },
       "ModelStoreAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -1357,6 +1367,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "CommonStoreAPI": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6",
           "ModelStoreAPI": "1.0.0"
@@ -4551,6 +4562,11 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "CommonStoreAPI/1.0.0": {
+      "type": "project",
+      "path": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj",
+      "msbuildProject": "../../Common/CommonStoreAPI/CommonStoreAPI.csproj"
     },
     "ModelStoreAPI/1.0.0": {
       "type": "project",

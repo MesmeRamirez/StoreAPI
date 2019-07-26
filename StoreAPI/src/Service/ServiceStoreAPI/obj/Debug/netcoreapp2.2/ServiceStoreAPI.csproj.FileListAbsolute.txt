@@ -12,3 +12,5 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStore
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\obj\Debug\netcoreapp2.2\ServiceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Service\ServiceStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb

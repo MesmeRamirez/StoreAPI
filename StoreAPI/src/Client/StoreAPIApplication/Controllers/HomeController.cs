@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using CommonStoreAPI;
+﻿using CommonStoreAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +8,9 @@ namespace StoreAPIApplication.Controllers
     public class HomeController : Controller
     {
 
-        private readonly ICurrentUser _currentUser;
+        private readonly ICurrentUserFactory _currentUser;
 
-        public HomeController(ICurrentUser currentUser)
+        public HomeController(ICurrentUserFactory currentUser)
         {
             _currentUser = currentUser;
         }

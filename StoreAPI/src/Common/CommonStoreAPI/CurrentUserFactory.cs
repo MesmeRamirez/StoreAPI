@@ -4,16 +4,16 @@ using System.Security.Claims;
 
 namespace CommonStoreAPI
 {
-    public interface ICurrentUser
+    public interface ICurrentUserFactory
     {
         CurrentUser Get { get; }
     }
 
-    public class CCurrentUser : ICurrentUser
+    public class CurrentUserFactory : ICurrentUserFactory
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CCurrentUser(IHttpContextAccessor httpContextAccessor)
+        public CurrentUserFactory(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }
@@ -40,19 +40,34 @@ namespace CommonStoreAPI
                     result.UserName = claims.Where(x => x.Type.Equals("UserName")).First().Value;
                 }
 
+                if (claims.Any(x => x.Type.Equals(ClaimTypes.Name)))
+                {
+                    result.Name = claims.Where(x => x.Type.Equals(ClaimTypes.Name)).First().Value;
+                }
+
+                if (claims.Any(x => x.Type.Equals(ClaimTypes.Surname)))
+                {
+                    result.LastName = claims.Where(x => x.Type.Equals(ClaimTypes.Surname)).First().Value;
+                }
+
                 if (claims.Any(x => x.Type.Equals(ClaimTypes.Email)))
                 {
                     result.Email = claims.Where(x => x.Type.Equals(ClaimTypes.Email)).First().Value;
                 }
 
-                if (claims.Any(x => x.Type.Equals("ImageProfile")))
-                {
-                    result.Image = claims.Where(x => x.Type.Equals("ImageProfile")).First().Value;
-                }
-
                 if (claims.Any(x => x.Type.Equals("access_token")))
                 {
                     result.Token = claims.Where(x => x.Type.Equals("access_token")).First().Value;
+                }
+
+                if (claims.Any(x => x.Type.Equals(ClaimTypes.NameIdentifier)))
+                {
+                    result.UserURL = claims.Where(x => x.Type.Equals(ClaimTypes.NameIdentifier)).First().Value;
+                }
+
+                if (claims.Any(x => x.Type.Equals(ClaimTypes.Role)))
+                {
+                    result.Role = claims.Where(x => x.Type.Equals(ClaimTypes.Role)).First().Value;
                 }
 
                 return result;
@@ -64,8 +79,11 @@ namespace CommonStoreAPI
     {
         public string UserId { get; set; }
         public string Email { get; set; }
-        public string Image { get; set; }
         public string Token { get; set; }
         public string UserName { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string UserURL { get; set; }
+        public string Role { get; set; }
     }
 }

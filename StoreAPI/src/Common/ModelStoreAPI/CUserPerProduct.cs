@@ -3,17 +3,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ModelStoreAPI
 {
-    //COMENTARIO:
-    //Clase que almacena los productos que fueron adquiridos por un usuario, la cantidad y la fecha de compra.
-    public class CUserByProduct
+    //COMMENT
+    //Class that contains all the products that were bought by an user, the quantity and the date.
+    public class CUserPerProduct
     {
         public int Id { get; set; }
 
         public CUser User { get; set; }
-        public string IdUser { get; set; }
+        public string UserId { get; set; }
 
         public CProduct Product { get; set; }
-        public int IdProduct { get; set; }
+        public int ProductId { get; set; }
 
         public int Quantity { get; set; }
 

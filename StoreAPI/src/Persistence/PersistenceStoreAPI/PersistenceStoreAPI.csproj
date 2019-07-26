@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190718211001_Initialize.cs" />
     <Compile Remove="Migrations\20190718211448_Initialize.cs" />
+    <Compile Remove="Migrations\20190725023041_init.cs" />
+    <Compile Remove="Migrations\20190725023118_init.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonStoreAPI\CommonStoreAPI.csproj" />
     <ProjectReference Include="..\..\Common\ModelStoreAPI\ModelStoreAPI.csproj" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@ namespace StoreAPI.Config
         public static void AddMyDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<ICurrentUser, CCurrentUser>();
+            services.AddTransient<ICurrentUserFactory, CurrentUserFactory>();
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();

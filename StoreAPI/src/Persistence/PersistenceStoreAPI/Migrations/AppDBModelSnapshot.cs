@@ -135,17 +135,33 @@ namespace PersistenceStoreAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdProduct");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("IdUser");
+                    b.Property<string>("CreatedBy");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.Property<string>("UserId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.HasIndex("UserId");
 
@@ -158,15 +174,13 @@ namespace PersistenceStoreAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdProduct");
-
-                    b.Property<decimal>("NewPrice")
+                    b.Property<decimal?>("NewPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("OldPrice")
+                    b.Property<decimal?>("OldPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<DateTime>("UpdateDate");
 
@@ -183,14 +197,40 @@ namespace PersistenceStoreAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Price")
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ProductName");
 
-                    b.Property<int>("Quantity");
+                    b.Property<int?>("Quantity");
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
+
+                    b.Property<string>("UrlImage");
+
+                    b.Property<string>("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Product");
                 });
@@ -205,16 +245,22 @@ namespace PersistenceStoreAPI.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<bool>("Deleted");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("Image");
+                    b.Property<string>("LastName")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(100);
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -235,7 +281,9 @@ namespace PersistenceStoreAPI.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
-                    b.Property<string>("UserURL");
+                    b.Property<string>("UserURL")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -250,17 +298,13 @@ namespace PersistenceStoreAPI.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ModelStoreAPI.CUserByProduct", b =>
+            modelBuilder.Entity("ModelStoreAPI.CUserPerProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("IdProduct");
-
-                    b.Property<string>("IdUser");
-
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Quantity");
 
@@ -274,43 +318,7 @@ namespace PersistenceStoreAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserByProduct");
-                });
-
-            modelBuilder.Entity("ModelStoreAPI.CUserByUserType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("IdUser");
-
-                    b.Property<int>("IdUserType");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<int?>("UserTypeId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("UserTypeId");
-
-                    b.ToTable("UserByUserType");
-                });
-
-            modelBuilder.Entity("ModelStoreAPI.CUserType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserType");
+                    b.ToTable("UserPerProduct");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -360,9 +368,22 @@ namespace PersistenceStoreAPI.Migrations
 
             modelBuilder.Entity("ModelStoreAPI.CLikeByProduct", b =>
                 {
+                    b.HasOne("ModelStoreAPI.CUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("ModelStoreAPI.CUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
                     b.HasOne("ModelStoreAPI.CProduct", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ModelStoreAPI.CUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
 
                     b.HasOne("ModelStoreAPI.CUser", "User")
                         .WithMany()
@@ -373,29 +394,39 @@ namespace PersistenceStoreAPI.Migrations
                 {
                     b.HasOne("ModelStoreAPI.CProduct", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ModelStoreAPI.CUserByProduct", b =>
+            modelBuilder.Entity("ModelStoreAPI.CProduct", b =>
+                {
+                    b.HasOne("ModelStoreAPI.CUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("ModelStoreAPI.CUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("ModelStoreAPI.CUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+
+                    b.HasOne("ModelStoreAPI.CUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("ModelStoreAPI.CUserPerProduct", b =>
                 {
                     b.HasOne("ModelStoreAPI.CProduct", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ModelStoreAPI.CUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("ModelStoreAPI.CUserByUserType", b =>
-                {
-                    b.HasOne("ModelStoreAPI.CUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("ModelStoreAPI.CUserType", "UserType")
-                        .WithMany()
-                        .HasForeignKey("UserTypeId");
                 });
 #pragma warning restore 612, 618
         }

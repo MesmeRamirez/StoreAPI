@@ -10,8 +10,8 @@ namespace StoreAPI.Config
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<CProduct, ProductDto>();
-                cfg.CreateMap<ProductDto, CProduct>();
+                cfg.CreateMap<CLikeByProduct, ProductDto>();
+                cfg.CreateMap<ProductDto, CLikeByProduct>();
                 cfg.CreateMap<CUser, UserDto>();
                 cfg.CreateMap<UserDto, CUser>();
             });

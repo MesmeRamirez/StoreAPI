@@ -17,8 +17,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ModelStoreAPI;
+using PersistenceStoreAPI;
 using System;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace AuthenticationStoreAPI.Controllers
@@ -34,6 +37,7 @@ namespace AuthenticationStoreAPI.Controllers
     {
         private readonly UserManager<CUser> _userManager;
         private readonly SignInManager<CUser> _signInManager;
+        private readonly AppDB _context;
         private readonly TestUserStore _users;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
@@ -47,6 +51,7 @@ namespace AuthenticationStoreAPI.Controllers
             IEventService events,
             UserManager<CUser> userManager,
             SignInManager<CUser> signInManager,
+            AppDB context,
             TestUserStore users = null)
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
@@ -59,6 +64,7 @@ namespace AuthenticationStoreAPI.Controllers
             _events = events;
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         /// <summary>
@@ -73,7 +79,8 @@ namespace AuthenticationStoreAPI.Controllers
             if (vm.IsExternalLoginOnly)
             {
                 // we only have one option for logging in and it's an external provider
-                return RedirectToAction("Challenge", "External", new { provider = vm.ExternalLoginScheme, returnUrl });
+                //return RedirectToAction("Challenge", "External", new { provider = vm.ExternalLoginScheme, returnUrl });
+                return await ExternalLogin(vm.ExternalLoginScheme, returnUrl);
             }
 
             return View(vm);
@@ -89,17 +96,29 @@ namespace AuthenticationStoreAPI.Controllers
         }
 
         /// <summary>
-        /// Registrar un nuevo usuario
+        /// Register a new user
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
+                //var UserURL = $"{model.Name + model.LastName}".Sluglify();
+
+                //var total = await _context.Users.Where(x => x.UserURL.Contains(UserURL)).CountAsync();
+
+                //if (total > 0)
+                //{
+                //    UserURL = $"{UserURL}-{total}";
+                //}
+
                 var user = new CUser
                 {
-                    UserName = model.Name,
-                    Email = model.Email
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    Name = model.Name,
+                    LastName = model.LastName,
+                    UserURL = ""
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -216,6 +235,33 @@ namespace AuthenticationStoreAPI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// initiate roundtrip to external authentication provider
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
+        {
+            if (AccountOptions.WindowsAuthenticationSchemeName == provider)
+            {
+                // windows authentication needs special handling
+                return await ProcessWindowsLoginAsync(returnUrl);
+            }
+            else
+            {
+                // start challenge and roundtrip the return URL and 
+                var props = new AuthenticationProperties()
+                {
+                    RedirectUri = Url.Action("ExternalLoginCallback"),
+                    Items =
+                    {
+                        { "returnUrl", returnUrl },
+                        { "scheme", provider },
+                    }
+                };
+                return Challenge(props, provider);
+            }
+        }
+
 
         /*****************************************/
         /* helper APIs for the AccountController */
@@ -278,6 +324,53 @@ namespace AuthenticationStoreAPI.Controllers
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray()
             };
+        }
+
+        private async Task<IActionResult> ProcessWindowsLoginAsync(string returnUrl)
+        {
+            // see if windows auth has already been requested and succeeded
+            var result = await HttpContext.AuthenticateAsync(AccountOptions.WindowsAuthenticationSchemeName);
+            if (result?.Principal is WindowsPrincipal wp)
+            {
+                // we will issue the external cookie and then redirect the
+                // user back to the external callback, in essence, tresting windows
+                // auth the same as any other external authentication mechanism
+                var props = new AuthenticationProperties()
+                {
+                    RedirectUri = Url.Action("ExternalLoginCallback"),
+                    Items =
+                    {
+                        { "returnUrl", returnUrl },
+                        { "scheme", AccountOptions.WindowsAuthenticationSchemeName },
+                    }
+                };
+
+                var id = new ClaimsIdentity(AccountOptions.WindowsAuthenticationSchemeName);
+                id.AddClaim(new Claim(JwtClaimTypes.Subject, wp.Identity.Name));
+                id.AddClaim(new Claim(JwtClaimTypes.Name, wp.Identity.Name));
+
+                // add the groups as claims -- be careful if the number of groups is too large
+                if (AccountOptions.IncludeWindowsGroups)
+                {
+                    var wi = wp.Identity as WindowsIdentity;
+                    var groups = wi.Groups.Translate(typeof(NTAccount));
+                    var roles = groups.Select(x => new Claim(JwtClaimTypes.Role, x.Value));
+                    id.AddClaims(roles);
+                }
+
+                await HttpContext.SignInAsync(
+                    IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme,
+                    new ClaimsPrincipal(id),
+                    props);
+                return Redirect(props.RedirectUri);
+            }
+            else
+            {
+                // trigger windows auth
+                // since windows auth don't support the redirect uri,
+                // this URL is re-triggered when we call challenge
+                return Challenge(AccountOptions.WindowsAuthenticationSchemeName);
+            }
         }
 
         private async Task<LoginViewModel> BuildLoginViewModelAsync(LoginInputModel model)

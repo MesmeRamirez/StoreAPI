@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AuthenticationStoreAPI.Config;
+﻿using AuthenticationStoreAPI.Config;
 using AuthenticationStoreAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModelStoreAPI;
 using PersistenceStoreAPI;
-using IdentityRole = Microsoft.AspNetCore.Identity.IdentityRole;
 
 namespace AuthenticationStoreAPI
 {
@@ -80,8 +73,6 @@ namespace AuthenticationStoreAPI
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
             }
 
             //app.UseHttpsRedirection();
@@ -95,6 +86,8 @@ namespace AuthenticationStoreAPI
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
+
     }
 }

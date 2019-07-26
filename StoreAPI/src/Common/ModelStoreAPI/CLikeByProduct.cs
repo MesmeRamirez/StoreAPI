@@ -1,15 +1,19 @@
-﻿namespace ModelStoreAPI
+﻿using ModelStoreAPI.DBHelper;
+
+namespace ModelStoreAPI
 {
     //COMENTARIO:
-    //Clase que almacena que usuario le dio like a un producto.
-    public class CLikeByProduct
+    //Class that contains which user gave a "like" to a product.
+    public class CLikeByProduct : AuditEntity, ISoftDeleted
     {
         public long Id { get; set; }
 
         public CUser User { get; set; }
-        public string IdUser { get; set; }
+        public string UserId { get; set; }
 
         public CProduct Product { get; set; }
-        public int IdProduct { get; set; }
+        public int ProductId { get; set; }
+
+        public bool Deleted { get; set; }
     }
 }

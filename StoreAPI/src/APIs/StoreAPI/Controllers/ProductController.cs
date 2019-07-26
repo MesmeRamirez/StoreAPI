@@ -52,5 +52,13 @@ namespace StoreAPI.Controllers
             return NoContent();
         }
 
+        [HttpDelete("products/{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            return Ok(
+                await _productService.Remove(id)
+            );
+        }
+
     }
 }

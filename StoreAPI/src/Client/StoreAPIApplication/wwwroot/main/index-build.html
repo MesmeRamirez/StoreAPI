@@ -1,27 +1,35 @@
-@inject ICurrentUser _currentUser
+@inject ICurrentUserFactory _currentUser
 
-@{ 
+@{
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Boutique Party Store - El Salvador</title>
+  <title>Boutique Party Store - El Salvador</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Base project Vue SPA by Anexsoft" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Base project Vue SPA by Anexsoft" />
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href='    https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href='    https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
 
-<link href="bundle/css/app.82daff93ee130c79e02487663d614641.css" rel="stylesheet"><link href="bundle/css/app.82daff93ee130c79e02487663d614641.css" rel="stylesheet"></head>
+  <link href="bundle/css/app.82daff93ee130c79e02487663d614641.css" rel="stylesheet">
+  <link href="bundle/css/app.82daff93ee130c79e02487663d614641.css" rel="stylesheet">
+</head>
 <body>
-    <div id="app"></div>
-    <script>
-        window.user = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(_currentUser.Get));
-        window.Api = {URL: '@Parameters.ApiURL'}
-    </script>
-<script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script><script type="text/javascript" src="bundle/js/vendor.a1bbf8e258362610753c.js"></script><script type="text/javascript" src="bundle/js/app.cb4ad9c43db476ab7c45.js"></script><script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script><script type="text/javascript" src="bundle/js/vendor.a1bbf8e258362610753c.js"></script><script type="text/javascript" src="bundle/js/app.15fb50daee6dfde309e9.js"></script></body>
+  <div id="app"></div>
+  <script>
+    window.user = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(_currentUser.Get));
+    window.Api = { URL: '@Parameters.ApiURL' }
+  </script>
+  <script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script>
+  <script type="text/javascript" src="bundle/js/vendor.a1bbf8e258362610753c.js"></script>
+  <script type="text/javascript" src="bundle/js/app.cb4ad9c43db476ab7c45.js"></script>
+  <script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script>
+  <script type="text/javascript" src="bundle/js/vendor.a1bbf8e258362610753c.js"></script>
+  <script type="text/javascript" src="bundle/js/app.15fb50daee6dfde309e9.js"></script>
+</body>
 </html>

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PersistenceStoreAPI.Migrations
 {
-    public partial class Initialize : Migration
+    public partial class initMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,40 +41,14 @@ namespace PersistenceStoreAPI.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Image = table.Column<string>(nullable: true),
-                    UserURL = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 100, nullable: true),
+                    LastName = table.Column<string>(maxLength: 100, nullable: true),
+                    UserURL = table.Column<string>(maxLength: 100, nullable: false),
+                    Deleted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Product",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductName = table.Column<string>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Product", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserType",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserType", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,23 +158,94 @@ namespace PersistenceStoreAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreatedAt = table.Column<DateTime>(nullable: true),
+                    CreatedBy = table.Column<string>(nullable: true),
+                    UpdatedAt = table.Column<DateTime>(nullable: true),
+                    UpdatedBy = table.Column<string>(nullable: true),
+                    DeletedAt = table.Column<DateTime>(nullable: true),
+                    DeletedBy = table.Column<string>(nullable: true),
+                    ProductName = table.Column<string>(nullable: true),
+                    Quantity = table.Column<int>(nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    UserId = table.Column<string>(nullable: true),
+                    UrlImage = table.Column<string>(nullable: true),
+                    Deleted = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Product_AspNetUsers_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Product_AspNetUsers_DeletedBy",
+                        column: x => x.DeletedBy,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Product_AspNetUsers_UpdatedBy",
+                        column: x => x.UpdatedBy,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Product_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LikeProduct",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreatedAt = table.Column<DateTime>(nullable: true),
+                    CreatedBy = table.Column<string>(nullable: true),
+                    UpdatedAt = table.Column<DateTime>(nullable: true),
+                    UpdatedBy = table.Column<string>(nullable: true),
+                    DeletedAt = table.Column<DateTime>(nullable: true),
+                    DeletedBy = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true),
-                    IdUser = table.Column<string>(nullable: true),
-                    ProductId = table.Column<int>(nullable: true),
-                    IdProduct = table.Column<int>(nullable: false)
+                    ProductId = table.Column<int>(nullable: false),
+                    Deleted = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LikeProduct", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_LikeProduct_AspNetUsers_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_LikeProduct_AspNetUsers_DeletedBy",
+                        column: x => x.DeletedBy,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_LikeProduct_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_LikeProduct_AspNetUsers_UpdatedBy",
+                        column: x => x.UpdatedBy,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -217,11 +262,10 @@ namespace PersistenceStoreAPI.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductId = table.Column<int>(nullable: true),
-                    IdProduct = table.Column<int>(nullable: false),
+                    ProductId = table.Column<int>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false),
-                    OldPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    NewPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    OldPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    NewPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -231,63 +275,33 @@ namespace PersistenceStoreAPI.Migrations
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserByProduct",
+                name: "UserPerProduct",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<string>(nullable: true),
-                    IdUser = table.Column<string>(nullable: true),
-                    ProductId = table.Column<int>(nullable: true),
-                    IdProduct = table.Column<int>(nullable: false),
+                    ProductId = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserByProduct", x => x.Id);
+                    table.PrimaryKey("PK_UserPerProduct", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserByProduct_Product_ProductId",
+                        name: "FK_UserPerProduct_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserByProduct_AspNetUsers_UserId",
+                        name: "FK_UserPerProduct_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserByUserType",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<string>(nullable: true),
-                    IdUser = table.Column<string>(nullable: true),
-                    UserTypeId = table.Column<int>(nullable: true),
-                    IdUserType = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserByUserType", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserByUserType_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_UserByUserType_UserType_UserTypeId",
-                        column: x => x.UserTypeId,
-                        principalTable: "UserType",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -332,9 +346,24 @@ namespace PersistenceStoreAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_LikeProduct_CreatedBy",
+                table: "LikeProduct",
+                column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LikeProduct_DeletedBy",
+                table: "LikeProduct",
+                column: "DeletedBy");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_LikeProduct_ProductId",
                 table: "LikeProduct",
                 column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LikeProduct_UpdatedBy",
+                table: "LikeProduct",
+                column: "UpdatedBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LikeProduct_UserId",
@@ -347,24 +376,34 @@ namespace PersistenceStoreAPI.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserByProduct_ProductId",
-                table: "UserByProduct",
+                name: "IX_Product_CreatedBy",
+                table: "Product",
+                column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_DeletedBy",
+                table: "Product",
+                column: "DeletedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_UpdatedBy",
+                table: "Product",
+                column: "UpdatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_UserId",
+                table: "Product",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserPerProduct_ProductId",
+                table: "UserPerProduct",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserByProduct_UserId",
-                table: "UserByProduct",
+                name: "IX_UserPerProduct_UserId",
+                table: "UserPerProduct",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserByUserType_UserId",
-                table: "UserByUserType",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserByUserType_UserTypeId",
-                table: "UserByUserType",
-                column: "UserTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -391,10 +430,7 @@ namespace PersistenceStoreAPI.Migrations
                 name: "LogPriceProduct");
 
             migrationBuilder.DropTable(
-                name: "UserByProduct");
-
-            migrationBuilder.DropTable(
-                name: "UserByUserType");
+                name: "UserPerProduct");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -404,9 +440,6 @@ namespace PersistenceStoreAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "UserType");
         }
     }
 }

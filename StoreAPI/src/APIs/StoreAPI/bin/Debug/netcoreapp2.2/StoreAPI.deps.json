@@ -333,6 +333,7 @@
       },
       "PersistenceStoreAPI/1.0.0": {
         "dependencies": {
+          "CommonStoreAPI": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6",
           "ModelStoreAPI": "1.0.0"

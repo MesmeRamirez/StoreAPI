@@ -12,3 +12,5 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\Persiste
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\obj\Debug\netcoreapp2.2\PersistenceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Persistence\PersistenceStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
