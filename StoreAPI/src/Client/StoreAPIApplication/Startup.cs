@@ -28,6 +28,8 @@ namespace StoreAPIApplication
         public void ConfigureServices(IServiceCollection services)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddMyDependencies(Configuration);
+            Parameters.ApiURL = Configuration["Api:URL"];
 
             services.AddAuthentication(opts =>
             {
@@ -77,9 +79,7 @@ namespace StoreAPIApplication
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
 
-            services.AddMyDependencies(Configuration);
-
-            Parameters.ApiURL = Configuration["Api:URL"];
+                      
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -15,7 +15,8 @@ namespace StoreAPI.Config
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<ILikeService, LikeService>();
+            services.AddScoped<ILogPriceService, LogPriceService>();
         }
     }
 }

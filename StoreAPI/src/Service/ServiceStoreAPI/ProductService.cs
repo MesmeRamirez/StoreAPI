@@ -158,6 +158,8 @@ namespace ServiceStoreAPI
 
             try
             {
+                //var product = await _context.Product.SingleOrDefaultAsync(x => x.Id == id);
+
                 var product = await _context.Product.SingleOrDefaultAsync(x => x.Id == id);
 
                 if (product != null)

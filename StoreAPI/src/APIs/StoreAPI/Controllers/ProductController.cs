@@ -60,5 +60,11 @@ namespace StoreAPI.Controllers
             );
         }
 
+        [HttpPut("products/{id}/UrlImage")]
+        public async Task<IActionResult> ImagePut(int id, [FromBody] FileDto model)
+        {
+            return NoContent();
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PersistenceStoreAPI;
 using Microsoft.EntityFrameworkCore;
 using StoreAPI.Config;
+using System.Security.Claims;
 
 namespace StoreAPI
 {
@@ -30,6 +31,8 @@ namespace StoreAPI
                 options.Authority = Configuration["AuthenticationStoreAPI:URL"];
                 options.RequireHttpsMetadata = false;
                 options.ApiName = Configuration["AuthenticationStoreAPI:APIName"];
+
+                options.RoleClaimType = ClaimTypes.Role;
             });
 
             services.AddCors(options =>

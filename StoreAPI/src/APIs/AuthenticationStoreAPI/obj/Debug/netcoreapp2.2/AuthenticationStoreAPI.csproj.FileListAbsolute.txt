@@ -5,9 +5,11 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationS
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\AuthenticationStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\AuthenticationStoreAPI.Views.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\AuthenticationStoreAPI.Views.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\PersistenceStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\ModelStoreAPI.pdb
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.csprojAssemblyReference.cache
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.csproj.CoreCompileInputs.cache
@@ -43,5 +45,3 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationS
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\obj\Debug\netcoreapp2.2\AuthenticationStoreAPI.pdb
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.dll
-C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\APIs\AuthenticationStoreAPI\bin\Debug\netcoreapp2.2\CommonStoreAPI.pdb
