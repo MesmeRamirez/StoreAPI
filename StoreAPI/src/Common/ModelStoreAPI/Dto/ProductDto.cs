@@ -19,6 +19,8 @@
         public decimal? Price { get; set; }
         public string UserId { get; set; }
         public string UrlImage { get; set; }
+        public int Likes { get; set; }
+        public bool ILikedIt { get; set; }
     }
 
     public class ProductListFilter

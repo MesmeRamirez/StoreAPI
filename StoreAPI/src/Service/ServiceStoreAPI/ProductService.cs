@@ -92,70 +92,53 @@ namespace ServiceStoreAPI
             return result;
         }
 
-        //public async Task<IEnumerable<ProductDto>> GetAll(ProductList list)
-        //{
-        //    var result = new List<ProductDto>();
-
-        //    try
-        //    {
-        //        var _filter = new ProductListFilter();
-
-        //        if (!string.IsNullOrEmpty(list.Filter))
-        //        {
-        //            _filter = JsonConvert.DeserializeObject<ProductListFilter>(list.Filter);
-
-        //            var query = (
-        //            from p in _context.Product
-        //            where _filter.ProductName.Equals(p.ProductName)
-        //            select new ProductDto
-        //            {
-        //                ProductName = p.ProductName,
-        //                Quantity = p.Quantity,
-        //                Price = p.Price
-        //            }
-        //            ).Take(list.Take);
-        //            result = await query.ToListAsync();
-        //        }
-        //        else
-        //        {
-        //            var query = (
-        //            from p in _context.Product
-        //            select new ProductDto
-        //            {
-        //                ProductName = p.ProductName,
-        //                Quantity = p.Quantity,
-        //                Price = p.Price
-        //            }
-        //            ).Take(10);
-        //            result = await query.ToListAsync();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //    }
-
-        //    return result;
-        //}
-
         public async Task<IEnumerable<ProductDto>> GetAll(ProductList list)
         {
             var result = new List<ProductDto>();
 
             try
             {
-                var query = (
-                from p in _context.Product
-                select new ProductDto
+                var _filter = new ProductListFilter();
+
+                if (!string.IsNullOrEmpty(list.Filter))
                 {
-                    Id = p.Id,
-                    ProductName = p.ProductName,
-                    Quantity = p.Quantity,
-                    Price = p.Price,
-                    UserId = p.UserId,
-                    UrlImage = p.UrlImage
-                });
-                result = await query.ToListAsync();
+                    _filter = JsonConvert.DeserializeObject<ProductListFilter>(list.Filter);
+
+                    var query = (
+                    from p in _context.Product
+                    where _filter.ProductName.Equals(p.ProductName)
+                    select new ProductDto
+                    {
+                        Id = p.Id,
+                        ProductName = p.ProductName,
+                        Quantity = p.Quantity,
+                        Price = p.Price,
+                        UserId = p.UserId,
+                        UrlImage = p.UrlImage,
+                        Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
+                        ILikedIt = false
+                    }
+                    ).Take(list.Take);
+                    result = await query.ToListAsync();
+                }
+                else
+                {
+                    var query = (
+                    from p in _context.Product
+                    select new ProductDto
+                    {
+                        Id = p.Id,
+                        ProductName = p.ProductName,
+                        Quantity = p.Quantity,
+                        Price = p.Price,
+                        UserId = p.UserId,
+                        UrlImage = p.UrlImage,
+                        Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
+                        ILikedIt = false
+                    }
+                    ).Take(10);
+                    result = await query.ToListAsync();
+                }
             }
             catch (Exception e)
             {
@@ -164,6 +147,33 @@ namespace ServiceStoreAPI
 
             return result;
         }
+
+        //public async Task<IEnumerable<ProductDto>> GetAll(ProductList list)
+        //{
+        //    var result = new List<ProductDto>();
+
+        //    try
+        //    {
+        //        var query = (
+        //        from p in _context.Product
+        //        select new ProductDto
+        //        {
+        //            Id = p.Id,
+        //            ProductName = p.ProductName,
+        //            Quantity = p.Quantity,
+        //            Price = p.Price,
+        //            UserId = p.UserId,
+        //            UrlImage = p.UrlImage
+        //        });
+        //        result = await query.ToListAsync();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //    }
+
+        //    return result;
+        //}
 
         public async Task<bool> Create(ProductCreateDto model)
         {

@@ -25,7 +25,7 @@ export default {
   name: "NavegationMenu",
   data: () => ({
     items: [
-      { icon: "dashboard", text: "Dashboard", path: "/" },
+      { icon: "list", text: "Products", path: "/" },
       {
         icon: "star",
         text: "My Cart",
