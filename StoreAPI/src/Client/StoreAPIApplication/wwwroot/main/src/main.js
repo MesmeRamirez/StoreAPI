@@ -3,7 +3,8 @@
 import Vue from 'vue'
 
 // Element Ui
-import Element from 'element-ui'
+import Element from 'element-ui';
+import { Notification } from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/es'
 import 'element-ui/lib/theme-chalk/index.css'
 

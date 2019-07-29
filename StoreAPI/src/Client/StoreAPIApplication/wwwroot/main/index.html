@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Base project Vue SPA by Anexsoft" />
+    <meta name="description" content="StoreAPI for APPLAUDO" />
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href='    https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
@@ -14,8 +14,8 @@
 <body>
     <div id="app"></div>
     <script>
-        window.user = {"UserId":"d0a45d80-4ab5-4cf4-b57c-dc74dc60bd09","Email":"esme_cz89@hotmail.com","Token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQzMjA1ODcsImV4cCI6MTU2NDMyNDE4NywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiJkMGE0NWQ4MC00YWI1LTRjZjQtYjU3Yy1kYzc0ZGM2MGJkMDkiLCJhdXRoX3RpbWUiOjE1NjQzMjA1ODcsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJlc21lUmFtaXJlejg5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvdXJpIjoiIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiZXNtZV9jejg5QGhvdG1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IkthcmxhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IlJhbWlyZXoiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiU3RvcmVBUEkiXSwiYW1yIjpbInB3ZCJdfQ.KrLR1Obh8XPq7UNB3AsGfRMEfjzJiPbXRsAUaZqnMgcGv1l_OEKcozS0f8r3OhTPhtfBlGXqqUOQYp6WmEG38p-hVzQCZoNRP8uHpNE7UdyKZrRFOmSfTg5tXU6k1JYjp91qOj_hMHiQ8wTeBYiafupvCGkmgE-PDuOPdATSPbL2ZHYnIYnTAT8ethx5kQPe-uUFtvhlwvMecPd_2mY76h4uDZUGGr8ny63yif72tOE71imZNgzPhE0mQ_KhAJMUK_MebYaxEp5tmJ4MfL23q_75LhuAvs8jigrQV3tMPzOS5P6fKc_WyignkzA_mDCiSzf1G7OFgSd8zV0zL2Ii0w","UserName":"esmeRamirez89","Name":"Karla","LastName":"Ramirez","UserURL":null,"Role":null};
+        window.user = {"UserId":"d0a45d80-4ab5-4cf4-b57c-dc74dc60bd09","Email":"esme_cz89@hotmail.com","Token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQzNTI0MTMsImV4cCI6MTU2NDM1NjAxMywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiJkMGE0NWQ4MC00YWI1LTRjZjQtYjU3Yy1kYzc0ZGM2MGJkMDkiLCJhdXRoX3RpbWUiOjE1NjQzNTI0MTIsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJlc21lUmFtaXJlejg5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvdXJpIjoiIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiZXNtZV9jejg5QGhvdG1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IkthcmxhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IlJhbWlyZXoiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiU3RvcmVBUEkiXSwiYW1yIjpbInB3ZCJdfQ.IFsOPU-4nVilJ1S2PmK8AePNt70jTHKyATiPQwEEM-wt08c02YEl-APLub6oSKTB1di1zEAMUnxV7RHCndujIqMs9vGiGLPoKvFCdxewCYnQyQxYz0pIiQqRVfZGD8K06KTgX6C8sZrdXvIJhpxeUhdVTT15RvUDu7Qya01OIGUeewv-PD5ZtpjpnhR0Xbb4_9fMxZxCcvBBGmOAXaSXBR8YUiPKAMpkvmQzP7KL19gOWECC1y5MOPZ47AdEfPvzi1S7jlzrvO6Lpwrw7hA2gsk9cAHoMnGojwGvuKSnQferHVM94IlHSHKLfisRs4DmAjgOvwqfBOjM4wep4-3qsQ","UserName":"esmeRamirez89","Name":"Karla","LastName":"Ramirez","UserURL":null,"Role":null};
         window.Api = { URL: 'http://localhost:50237/' }
-      </script>          
+    </script>       
 </body>
 </html>

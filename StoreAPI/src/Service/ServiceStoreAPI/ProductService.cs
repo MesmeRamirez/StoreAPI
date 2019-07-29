@@ -60,6 +60,18 @@ namespace ServiceStoreAPI
                 }
                 if (model.Quantity != null)
                 {
+                    if (product.Quantity != model.Quantity)
+                    {
+                        _context.LogPriceProduct.Add(new CLogPriceProduct
+                        {
+                            ProductId = id,
+                            UpdateDate = DateTime.Now,
+                            OldPrice = product.Quantity,
+                            NewPrice = model.Quantity
+                        });
+
+                        await _context.SaveChangesAsync();
+                    }
                     product.Quantity = model.Quantity;
                 }
                 if (model.Price != null)
@@ -80,43 +92,70 @@ namespace ServiceStoreAPI
             return result;
         }
 
+        //public async Task<IEnumerable<ProductDto>> GetAll(ProductList list)
+        //{
+        //    var result = new List<ProductDto>();
+
+        //    try
+        //    {
+        //        var _filter = new ProductListFilter();
+
+        //        if (!string.IsNullOrEmpty(list.Filter))
+        //        {
+        //            _filter = JsonConvert.DeserializeObject<ProductListFilter>(list.Filter);
+
+        //            var query = (
+        //            from p in _context.Product
+        //            where _filter.ProductName.Equals(p.ProductName)
+        //            select new ProductDto
+        //            {
+        //                ProductName = p.ProductName,
+        //                Quantity = p.Quantity,
+        //                Price = p.Price
+        //            }
+        //            ).Take(list.Take);
+        //            result = await query.ToListAsync();
+        //        }
+        //        else
+        //        {
+        //            var query = (
+        //            from p in _context.Product
+        //            select new ProductDto
+        //            {
+        //                ProductName = p.ProductName,
+        //                Quantity = p.Quantity,
+        //                Price = p.Price
+        //            }
+        //            ).Take(10);
+        //            result = await query.ToListAsync();
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //    }
+
+        //    return result;
+        //}
+
         public async Task<IEnumerable<ProductDto>> GetAll(ProductList list)
         {
             var result = new List<ProductDto>();
 
             try
             {
-                var _filter = new ProductListFilter();
-
-                if (!string.IsNullOrEmpty(list.Filter))
+                var query = (
+                from p in _context.Product
+                select new ProductDto
                 {
-                    _filter = JsonConvert.DeserializeObject<ProductListFilter>(list.Filter);
-
-                    var query = (
-                    from p in _context.Product
-                    where _filter.ProductName.Equals(p.ProductName)
-                    select new ProductDto
-                    {
-                        ProductName = p.ProductName,
-                        Quantity = p.Quantity,
-                        Price = p.Price
-                    }
-                    ).Take(list.Take);
-                    result = await query.ToListAsync();
-                }
-                else
-                {
-                    var query = (
-                    from p in _context.Product
-                    select new ProductDto
-                    {
-                        ProductName = p.ProductName,
-                        Quantity = p.Quantity,
-                        Price = p.Price
-                    }
-                    ).Take(list.Take);
-                    result = await query.ToListAsync();
-                }
+                    Id = p.Id,
+                    ProductName = p.ProductName,
+                    Quantity = p.Quantity,
+                    Price = p.Price,
+                    UserId = p.UserId,
+                    UrlImage = p.UrlImage
+                });
+                result = await query.ToListAsync();
             }
             catch (Exception e)
             {

@@ -15,7 +15,7 @@
             </el-col>
           </el-row>
         </el-main>
-        <el-footer>© <a target="_blank" href="http://anexsoft.com/p/186/proyecto-base-spa-con-vue-vuex-vuerouter-axios-y-element-ui">{{ 'Desarrollo por Anexsoft ' + new Date().getFullYear() }}</a></el-footer>
+        <el-footer></el-footer>
       </el-container>
     </el-container>
   </el-container>

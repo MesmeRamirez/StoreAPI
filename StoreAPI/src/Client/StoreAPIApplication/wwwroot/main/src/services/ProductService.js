@@ -12,15 +12,21 @@ class ProductService {
         return self.axios.get(`${self.baseUrl}products/${id}`);
     }
 
-    getAll(take, filter){
+    /*getAll(take, filter){
         let self = this;
-        let query = 'take=${take}&filter=${JSON.stringify(filter)}';
+        //let query = 'take=${take}&filter=${JSON.stringify(filter)}';
+        let query = 'take=10';
         return self.axios.get(`${self.baseUrl}products?${query}`);
+    }*/
+
+    getAll(){
+        let self = this;
+        return self.axios.get(`${self.baseUrl}products`);
     }
 
     partial(id, params) {
         let self = this;
-        return self.axios.patch(`${self.baseUrl}/${id}`, params);
+        return self.axios.patch(`${self.baseUrl}products/${id}`, params);
     }
 
     image(id, file) {
@@ -31,6 +37,11 @@ class ProductService {
     create(model) {
         let self = this;
         return self.axios.post(`${self.baseUrl}products`, model);
+    }
+
+    remove(id) {
+        let self = this;
+        return self.axios.delete(`${self.baseUrl}products/${id}`);
     }
 
 }

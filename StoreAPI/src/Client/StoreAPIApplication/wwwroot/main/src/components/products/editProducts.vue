@@ -1,6 +1,6 @@
 <template>
 <div class="custom-container">
-  <h2 class="page-tittle">Create a new Product</h2>
+  <h2 class="page-tittle">Edit Product</h2>
     <el-form v-loading="loading" ref="form" :model="form" :rules="rules" label-width="120px">
       <el-form-item label="Product Name" prop="ProductName">
         <el-input v-model="form.ProductName" id="ProductName"></el-input>
@@ -12,8 +12,8 @@
         <el-input v-model="form.Price" id="Price"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">Create</el-button>
-        <el-button @click="$router.push('/')">Cancel</el-button>
+        <el-button type="primary" @click="onSubmit">Save</el-button>
+        <el-button @click="$router.push('/manage-products')">Cancel</el-button>
       </el-form-item>
     </el-form>
 </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'createProducts',
+  name: 'editProducts',
   data: () => {
     return {
       loading: false,
@@ -63,22 +63,45 @@ export default {
       }
     };    
   },
-  created() {},
+  created() {
+    let self = this;
+    self.get(self.$route.params.id);
+  },
   methods: {
+    get(id){
+      if(id == undefined) return;
+
+      let self = this;
+      self.loading = true;
+      self.$store.state.services.productService
+        .get(id)
+        .then(r => {
+          self.loading = false;
+          self.form.ProductName = r.data.productName;
+          self.form.Quantity = r.data.quantity;
+          self.form.Price = r.data.price;
+        })
+        .catch(r => {
+          self.$message({
+            message: "Ocurrió un error inesperado",
+            type: "error"
+          });
+        });
+    },
     onSubmit(){
       let self = this;
       self.$refs["form"].validate(valid => {
         if (valid) {
+          self.loading = true;
+          console.log(self.$route.params.id);
           self.$store.state.services.productService
-            .create(self.form)
+            .partial(self.$route.params.id, self.form)
             .then(r => {
               self.loading = false;
-              this.$alert('The product has been created successfully', 'New product created', {
+              this.$alert('The product has been updated successfully', 'Product updated', {
                 confirmButtonText: 'OK'
               }); 
-              document.getElementById("ProductName").value = "";
-              document.getElementById("Quantity").value = "";  
-              document.getElementById("Price").value = "";  
+              self.get(self.$route.params.id);
             })
             .catch(r => {
               self.$message({

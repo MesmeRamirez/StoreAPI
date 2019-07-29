@@ -9,3 +9,4 @@ C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAP
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csproj.CopyComplete
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.dll
 C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.pdb
+C:\Users\Javier\source\repos\StoreAPI\StoreAPI\StoreAPI\src\Common\CommonStoreAPI\obj\Debug\netcoreapp2.2\CommonStoreAPI.csprojAssemblyReference.cache

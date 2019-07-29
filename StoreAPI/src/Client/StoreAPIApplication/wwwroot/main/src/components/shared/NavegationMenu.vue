@@ -28,15 +28,15 @@ export default {
       { icon: "dashboard", text: "Dashboard", path: "/" },
       {
         icon: "star",
-        text: "Ejemplo",
-        children: [{ icon: "list", text: "Listar", path: "/example" }]
+        text: "My Cart",
+        children: [{ icon: "list", text: "My Shoppings", path: "/example" }]
       },
       {
         icon: "wrench",
         text: "Configuration",
         children: [
-          { icon: "list", text: "Create Products", path: "/add-products" },
-          { icon: "list", text: "Opción 2", path: "/configuration/opcion2" }
+          { icon: "plus", text: "Create Products", path: "/add-products" },
+          { icon: "wrench", text: "Manage Products", path: "/manage-products" }
         ]
       }
     ]
