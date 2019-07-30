@@ -11,9 +11,9 @@ namespace ModelStoreAPI.Dto
         public int Take { get; set; }
         public string Filter { get; set; }
 
-        public ProductList()
-        {
-            Take = 10;
-        }
+        //public ProductList()
+        //{
+        //    Take = 10;
+        //}
     }
 }

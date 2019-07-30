@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "174b78c2-b9fe-464c-b24b-8b8af3dd0373",
+		"name": "Collection StoreAPI - APPLAUDO",
+		"description": "Collection to test de StoreAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ProductName\": \"Producto Nuevo\",\n\t\"Quantity\": 40,\n\t\"Price\": 102.45,\n\t\"UserId\": \"\",\n\t\"UrlImage\": \"90ba4295-f6aa-4926-92de-eafe15906c82\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:50237/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "POST - Create a new product\n\nRequiere el token del usuario para la autorizacion con bearer y el UserId para indicar que usuario creo el producto, ambos los obtengo del \"View page source\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Autho",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+								"type": "text"
+							},
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:50237/products/35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products",
+								"35"
+							]
+						},
+						"description": "Obtain a product by id\n\n\nRequiere el token del usuario para la autorizacion con bearer."
+					},
+					"response": [
+						{
+							"name": "Get product by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Autho",
+										"type": "text",
+										"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg"
+									},
+									{
+										"key": "Content",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:50237/products/35",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "50237",
+									"path": [
+										"products",
+										"35"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcVXNlcnNcSmF2aWVyXHNvdXJjZVxyZXBvc1xTdG9yZUFQSVxTdG9yZUFQSVxTdG9yZUFQSVxzcmNcQVBJc1xTdG9yZUFQSVxwcm9kdWN0c1wzNQ==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2019 13:05:04 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 35,\n    \"productName\": \"Pennant - HBD\",\n    \"quantity\": 43,\n    \"price\": 4.5,\n    \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n    \"urlImage\": \"9cc89278-689f-46d5-b930-75d7bbf44455.png\",\n    \"imagePath\": \"/Uploads/9cc89278-689f-46d5-b930-75d7bbf44455.png\",\n    \"likes\": 0,\n    \"iLikedIt\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:50237/products?take=1&filter={\"productName\": \"Pencils - Staedler\"}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "1"
+								},
+								{
+									"key": "filter",
+									"value": "{\"productName\": \"Pencils - Staedler\"}"
+								}
+							]
+						},
+						"description": "List of products paging"
+					},
+					"response": [
+						{
+							"name": "Get product by name",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:50237/products?take=1&filter={\"productName\": \"Pencils - Staedler\"}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "50237",
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "take",
+											"value": "1"
+										},
+										{
+											"key": "filter",
+											"value": "{\"productName\": \"Pencils - Staedler\"}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcVXNlcnNcSmF2aWVyXHNvdXJjZVxyZXBvc1xTdG9yZUFQSVxTdG9yZUFQSVxTdG9yZUFQSVxzcmNcQVBJc1xTdG9yZUFQSVxwcm9kdWN0cw==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2019 13:27:22 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 32,\n        \"productName\": \"Pencils - Staedler\",\n        \"quantity\": 275,\n        \"price\": 1.1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"imagePath\": \"/Uploads/71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "List products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:50237/products?take=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "2"
+								}
+							]
+						},
+						"description": "List products"
+					},
+					"response": [
+						{
+							"name": "List products pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:50237/products?take=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "50237",
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "take",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcVXNlcnNcSmF2aWVyXHNvdXJjZVxyZXBvc1xTdG9yZUFQSVxTdG9yZUFQSVxTdG9yZUFQSVxzcmNcQVBJc1xTdG9yZUFQSVxwcm9kdWN0cw==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2019 13:28:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 32,\n        \"productName\": \"Pencils - Staedler\",\n        \"quantity\": 275,\n        \"price\": 1.1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"imagePath\": \"/Uploads/71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 33,\n        \"productName\": \"Glue stick - Pritt\",\n        \"quantity\": 75,\n        \"price\": 1.5,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"da2f9dfd-c7c7-4177-aa59-471500d85a3d.png\",\n        \"imagePath\": \"/Uploads/da2f9dfd-c7c7-4177-aa59-471500d85a3d.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    }\n]"
+						},
+						{
+							"name": "List products - All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTEyODAsImV4cCI6MTU2NDQ5NDg4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTEyNzksImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.ot5TP0ErmsJHxRZZZv7zSSYY6DZzK5d6WD_s6c3YAWl8SLosxqNBkTNjh6dnmd-mjPtM_JXZLVo3vai30zbgGGqwDrfq2KzQLH-c0Fp7TOyEXbI224WlOwspTWRrlvA-K-y-GuFDGVUxvQSEe_YR7bQs1Fe1pX8q-Xe-Lw3hdoO7KWIgF0UCAImy0fg1xkBu9Q6chRQzwDPYTGiMzTGinc7goEHiOos_Z6gWn9cDKRTawlXzn2WZSJ0FGRlYNLyipAbbOAdOibtCDKwxVcMT_TnelMJef4m3V_sVdmLAB0YnSYczxtVDrKbxWKiZqwuVQHq_HE8-DZ-4CxvwBePROg",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:50237/products?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "50237",
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "take",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcVXNlcnNcSmF2aWVyXHNvdXJjZVxyZXBvc1xTdG9yZUFQSVxTdG9yZUFQSVxTdG9yZUFQSVxzcmNcQVBJc1xTdG9yZUFQSVxwcm9kdWN0cw==?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2019 13:29:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5263"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 32,\n        \"productName\": \"Pencils - Staedler\",\n        \"quantity\": 275,\n        \"price\": 1.1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"imagePath\": \"/Uploads/71ff05d8-5341-442d-9ab7-4fdc198534fa.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 33,\n        \"productName\": \"Glue stick - Pritt\",\n        \"quantity\": 75,\n        \"price\": 1.5,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"da2f9dfd-c7c7-4177-aa59-471500d85a3d.png\",\n        \"imagePath\": \"/Uploads/da2f9dfd-c7c7-4177-aa59-471500d85a3d.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 34,\n        \"productName\": \"Carton Board - White\",\n        \"quantity\": 100,\n        \"price\": 1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"f6da376d-21ef-4ef5-9637-1d165f80bcf3.png\",\n        \"imagePath\": \"/Uploads/f6da376d-21ef-4ef5-9637-1d165f80bcf3.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 35,\n        \"productName\": \"Pennant - HBD\",\n        \"quantity\": 43,\n        \"price\": 4.5,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"9cc89278-689f-46d5-b930-75d7bbf44455.png\",\n        \"imagePath\": \"/Uploads/9cc89278-689f-46d5-b930-75d7bbf44455.png\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 36,\n        \"productName\": \"Balloons - Yellow\",\n        \"quantity\": 470,\n        \"price\": 0.1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"46f085d2-61d8-4658-9db5-2013109db677.png\",\n        \"imagePath\": \"/Uploads/46f085d2-61d8-4658-9db5-2013109db677.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 37,\n        \"productName\": \"Rainbow Pack - Party\",\n        \"quantity\": 40,\n        \"price\": 5.75,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"990023fc-9cbe-4a42-9059-a4a2f2daf2e9.jpg\",\n        \"imagePath\": \"/Uploads/990023fc-9cbe-4a42-9059-a4a2f2daf2e9.jpg\",\n        \"likes\": 1,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 38,\n        \"productName\": \"Ream paper\",\n        \"quantity\": 100,\n        \"price\": 2.5,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"fb3c89c8-52c0-47a1-bdef-891d37bdd04e.png\",\n        \"imagePath\": \"/Uploads/fb3c89c8-52c0-47a1-bdef-891d37bdd04e.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 39,\n        \"productName\": \"Tape\",\n        \"quantity\": 90,\n        \"price\": 1.3,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"29c766fb-24a8-4ce2-b09d-83b07421f022.png\",\n        \"imagePath\": \"/Uploads/29c766fb-24a8-4ce2-b09d-83b07421f022.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 40,\n        \"productName\": \"Green Balloons\",\n        \"quantity\": 360,\n        \"price\": 0.1,\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"urlImage\": \"1f2ef1cf-e644-47e9-8ad2-d3095726b248.png\",\n        \"imagePath\": \"/Uploads/1f2ef1cf-e644-47e9-8ad2-d3095726b248.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 41,\n        \"productName\": \"Balloons - Black\",\n        \"quantity\": 675,\n        \"price\": 0.1,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"db41b76e-9047-4ba7-b462-f856656b9862.png\",\n        \"imagePath\": \"/Uploads/db41b76e-9047-4ba7-b462-f856656b9862.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 42,\n        \"productName\": \"Balloons - Blue\",\n        \"quantity\": 425,\n        \"price\": 0.1,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"9d56e266-ee6e-41ee-b3dc-256e83f1eff9.png\",\n        \"imagePath\": \"/Uploads/9d56e266-ee6e-41ee-b3dc-256e83f1eff9.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 43,\n        \"productName\": \"Carton Board - Brown\",\n        \"quantity\": 130,\n        \"price\": 1,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"86555471-5e62-410c-818a-cf60fa70b361.png\",\n        \"imagePath\": \"/Uploads/86555471-5e62-410c-818a-cf60fa70b361.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 44,\n        \"productName\": \"Decorated Cups\",\n        \"quantity\": 154,\n        \"price\": 0.75,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"d60cb8c3-d9ff-4e43-8b78-82252e85e6b4.png\",\n        \"imagePath\": \"/Uploads/d60cb8c3-d9ff-4e43-8b78-82252e85e6b4.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 45,\n        \"productName\": \"Pen - Black\",\n        \"quantity\": 218,\n        \"price\": 0.85,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"6dc6e7e7-8031-4673-aa4c-b298b830dbde.jpg\",\n        \"imagePath\": \"/Uploads/6dc6e7e7-8031-4673-aa4c-b298b830dbde.jpg\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 46,\n        \"productName\": \"Pen - Blue\",\n        \"quantity\": 325,\n        \"price\": 0.7,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"5d79f98e-b6f3-4dbc-9182-d7489b527797.png\",\n        \"imagePath\": \"/Uploads/5d79f98e-b6f3-4dbc-9182-d7489b527797.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 47,\n        \"productName\": \"Pennant - Baby Shower Boy\",\n        \"quantity\": 43,\n        \"price\": 6.75,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"a3a88522-acd2-4b61-b0b1-8b4af7bf9658.jpg\",\n        \"imagePath\": \"/Uploads/a3a88522-acd2-4b61-b0b1-8b4af7bf9658.jpg\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 48,\n        \"productName\": \"Pennant - Baby Shower G\",\n        \"quantity\": 60,\n        \"price\": 6.75,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"ec684686-3140-4d39-8e5a-b840672d962d.jpg\",\n        \"imagePath\": \"/Uploads/ec684686-3140-4d39-8e5a-b840672d962d.jpg\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 49,\n        \"productName\": \"Pen - Red\",\n        \"quantity\": 160,\n        \"price\": 0.8,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"5cda1294-f456-4aba-b839-5ede6e6d5ab8.png\",\n        \"imagePath\": \"/Uploads/5cda1294-f456-4aba-b839-5ede6e6d5ab8.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 50,\n        \"productName\": \"Balloons - Purple\",\n        \"quantity\": 390,\n        \"price\": 0.1,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"e0afde20-c2c1-43b9-b90f-b132b2491818.png\",\n        \"imagePath\": \"/Uploads/e0afde20-c2c1-43b9-b90f-b132b2491818.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    },\n    {\n        \"id\": 51,\n        \"productName\": \"Balloons - Red\",\n        \"quantity\": 280,\n        \"price\": 0.1,\n        \"userId\": \"898796e5-7cc0-445a-8a4a-9532be003619\",\n        \"urlImage\": \"83112c85-5a34-47d8-bc3b-96bf828d09e2.png\",\n        \"imagePath\": \"/Uploads/83112c85-5a34-47d8-bc3b-96bf828d09e2.png\",\n        \"likes\": 0,\n        \"iLikedIt\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Price\": 0.15\n}"
+						},
+						"url": {
+							"raw": "http://localhost:50237/products/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products",
+								"36"
+							]
+						},
+						"description": "Update partial a un producto.\n\nActualiza tanto el producto, como el log de precios del producto."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:50237/products/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"products",
+								"40"
+							]
+						},
+						"description": "Deletes a product by id"
+					},
+					"response": []
+				}
+			],
+			"description": "It contains all the requests for products.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03e16005-5992-4d51-bbe8-058a260d4e6c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "be5fd3e2-f05a-478a-bb4d-7c78377ebf3c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "LikePerProduct",
+			"item": [
+				{
+					"name": "Create like per product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"UserId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n\t\"ProductId\" : \"39\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:50237/likes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"likes",
+								""
+							]
+						},
+						"description": "It saves UserId and ProductId, so that we can know who liked which product."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete like per product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:50237/likes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"likes",
+								"3"
+							]
+						},
+						"description": "By sending the id it removes the like given by an user."
+					},
+					"response": []
+				}
+			],
+			"description": "Collection for testing add, delete a like per product."
+		},
+		{
+			"name": "Buy",
+			"item": [
+				{
+					"name": "Buy a product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"UserId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n\t\"ProductId\": 37,\n\t\"Quantity\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:50237/userProducts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"userProducts",
+								""
+							]
+						},
+						"description": "Se coloca el usuario que hace la compra, el id del producto y la cantidad. Automaticamente se realiza el descuento del inventario del producto."
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:50237/userProducts/90ba4295-f6aa-4926-92de-eafe15906c82",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "50237",
+							"path": [
+								"userProducts",
+								"90ba4295-f6aa-4926-92de-eafe15906c82"
+							]
+						},
+						"description": "Obtiene el listado de productos que ha comprado un usuario."
+					},
+					"response": [
+						{
+							"name": "Get products by user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRiMGQ3YmY2M2Q1MjJjZTY3NDMyMjYyOGY1NjQ5Yzk4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjQ0OTMxNzYsImV4cCI6MTU2NDQ5Njc3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDg0NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwODQ3L3Jlc291cmNlcyIsIlN0b3JlQVBJIl0sImNsaWVudF9pZCI6IlNUT1JFLUFQUExJQ0FUSU9OLUtFUkc4OS1KUlI4MzQtTUdMNTAiLCJzdWIiOiI5MGJhNDI5NS1mNmFhLTQ5MjYtOTJkZS1lYWZlMTU5MDZjODIiLCJhdXRoX3RpbWUiOjE1NjQ0OTMxNzYsImlkcCI6ImxvY2FsIiwiVXNlck5hbWUiOiJhZG1pbmlzdHJhdG9yMTkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy91cmkiOiIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbjE5QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc3VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJTdG9yZUFQSSJdLCJhbXIiOlsicHdkIl19.L7ZG-USoeEa_xW3Lu1t6c1niApRMD5EjcvJOZfihyuDUI3-sgEFnFWeTnDXp6Cs7GLW0IqJ_Wyt6nuX1Yv734SeDDkqbv0p0TUMVPAb0dqd8eSx6rf4UJ7-ONkWXSOBdmBNSohxSei4VqtZvCjSdA3aDfCzsJDAkK3QDGPvBcKkBIQmD4rbpJ5Q3jjuBYOUKVHPOC0W6N0Zg0zNv499Qh0YUAj9_X43ntoEjWtjRD5ixE70Edbhf_NPh95aOpCtHIxIcLoTy7ck7osP5cRAZmxdHv0YkQOHFoZ47IiFQhcU06XqsEFpCJG-DP01DW9qKEMSYvFkoUwwltnkkZgoBhA",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:50237/userProducts/90ba4295-f6aa-4926-92de-eafe15906c82",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "50237",
+									"path": [
+										"userProducts",
+										"90ba4295-f6aa-4926-92de-eafe15906c82"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "X-SourceFiles",
+									"value": "=?UTF-8?B?QzpcVXNlcnNcSmF2aWVyXHNvdXJjZVxyZXBvc1xTdG9yZUFQSVxTdG9yZUFQSVxTdG9yZUFQSVxzcmNcQVBJc1xTdG9yZUFQSVx1c2VyUHJvZHVjdHNcOTBiYTQyOTUtZjZhYS00OTI2LTkyZGUtZWFmZTE1OTA2Yzgy?="
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2019 13:54:18 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"productId\": 35,\n        \"productName\": \"Pennant - HBD\",\n        \"quantity\": 7,\n        \"price\": 4.5,\n        \"total\": null\n    },\n    {\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"productId\": 44,\n        \"productName\": \"Decorated Cups\",\n        \"quantity\": 2,\n        \"price\": 0.75,\n        \"total\": null\n    },\n    {\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"productId\": 44,\n        \"productName\": \"Decorated Cups\",\n        \"quantity\": 4,\n        \"price\": 0.75,\n        \"total\": null\n    },\n    {\n        \"userId\": \"90ba4295-f6aa-4926-92de-eafe15906c82\",\n        \"productId\": 37,\n        \"productName\": \"Rainbow Pack - Party\",\n        \"quantity\": 3,\n        \"price\": 5.75,\n        \"total\": null\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Collection that creates a purchase by an user.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5862307c-3a30-46ab-be5c-327efd88e697",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5331e38-ba4c-440b-85a9-390aed47f8f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

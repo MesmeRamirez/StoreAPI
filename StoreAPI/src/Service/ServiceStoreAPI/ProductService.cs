@@ -124,10 +124,26 @@ namespace ServiceStoreAPI
                         Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
                         ILikedIt = _context.LikeProduct.Any(x => x.UserId == _filter.UserId && x.ProductId == p.Id)
                     }
-                    );
+                    ).Take(list.Take);
                     result = await query.ToListAsync();
                 }
-                else
+                else if (list.Take > 0){
+                    var query = (
+                    from p in _context.Product
+                    select new ProductDto
+                    {
+                        Id = p.Id,
+                        ProductName = p.ProductName,
+                        Quantity = p.Quantity,
+                        Price = p.Price,
+                        UserId = p.UserId,
+                        UrlImage = p.UrlImage,
+                        Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
+                        ILikedIt = false
+                    }
+                    ).Take(list.Take);
+                    result = await query.ToListAsync();
+                } else
                 {
                     var query = (
                     from p in _context.Product
