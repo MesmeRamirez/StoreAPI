@@ -71,7 +71,7 @@ export default {
         if (valid) {
           self.$store.state.services.productService
             .create(self.form)
-            .then(r => {
+            .then(r2 => {
               self.loading = false;
               this.$alert('The product has been created successfully', 'New product created', {
                 confirmButtonText: 'OK'
@@ -79,12 +79,11 @@ export default {
               document.getElementById("ProductName").value = "";
               document.getElementById("Quantity").value = "";  
               document.getElementById("Price").value = "";  
+              document.getElementById("UrlImage").value = ""; 
             })
-            .catch(r => {
-              self.$message({
-                message: "Ocurrió un error inesperado",
-                type: "error"
-              });
+            .catch(r2 => {
+              self.loading = false;
+              console.log(r2);
             });
         }
       });

@@ -31,7 +31,7 @@ class ProductService {
 
     image(id, file) {
         let self = this;
-        return self.axios.put(`${self.baseUrl}/${id}/image`, file);
+        return self.axios.put(`${self.baseUrl}products/${id}/image`, file);
     }
 
     create(model) {

@@ -38,10 +38,11 @@ namespace ServiceStoreAPI
             {
                 var product = await _context.Product.SingleAsync(x => x.Id == id);
                 result = Mapper.Map<ProductDto>(product);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
 
-            }           
+            }
 
             return result;
         }
@@ -53,31 +54,36 @@ namespace ServiceStoreAPI
             try
             {
                 var product = await _context.Product.SingleAsync(x => x.Id == id);
-                
-                if(model.ProductName != null)
+
+                if (model.ProductName != null)
                 {
                     product.ProductName = model.ProductName;
                 }
                 if (model.Quantity != null)
                 {
-                    if (product.Quantity != model.Quantity)
+                    product.Quantity = model.Quantity;
+                }
+                if (model.Price != null)
+                {
+                    if (product.Price != model.Price)
                     {
                         _context.LogPriceProduct.Add(new CLogPriceProduct
                         {
                             ProductId = id,
                             UpdateDate = DateTime.Now,
-                            OldPrice = product.Quantity,
-                            NewPrice = model.Quantity
+                            OldPrice = product.Price,
+                            NewPrice = model.Price
                         });
 
                         await _context.SaveChangesAsync();
                     }
-                    product.Quantity = model.Quantity;
-                }
-                if (model.Price != null)
-                {
                     product.Price = model.Price;
                 }
+                if (model.UrlImage != null)
+                {
+                    product.UrlImage = model.UrlImage;
+                }
+
 
                 _context.Update(product);
                 await _context.SaveChangesAsync();
@@ -116,9 +122,9 @@ namespace ServiceStoreAPI
                         UserId = p.UserId,
                         UrlImage = p.UrlImage,
                         Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
-                        ILikedIt = false
+                        ILikedIt = _context.LikeProduct.Any(x => x.UserId == _filter.UserId && x.ProductId == p.Id)
                     }
-                    ).Take(list.Take);
+                    );
                     result = await query.ToListAsync();
                 }
                 else
@@ -136,7 +142,7 @@ namespace ServiceStoreAPI
                         Likes = _context.LikeProduct.Count(x => x.ProductId == p.Id),
                         ILikedIt = false
                     }
-                    ).Take(10);
+                    );
                     result = await query.ToListAsync();
                 }
             }
@@ -186,11 +192,12 @@ namespace ServiceStoreAPI
                     ProductName = model.ProductName,
                     Quantity = model.Quantity,
                     Price = model.Price,
-                    UserId = model.UserId
+                    UserId = model.UserId,
+                    UrlImage = model.UrlImage
                 });
 
                 await _context.SaveChangesAsync();
-                
+
                 result = true;
             }
             catch (Exception e)

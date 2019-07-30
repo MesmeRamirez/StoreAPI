@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using ModelStoreAPI.Dto;
 using ServiceStoreAPI;
@@ -10,10 +12,12 @@ namespace StoreAPI.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IHostingEnvironment hostingEnvironment)
         {
             _productService = productService;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         // GET 
@@ -60,9 +64,26 @@ namespace StoreAPI.Controllers
             );
         }
 
-        [HttpPut("products/{id}/UrlImage")]
-        public async Task<IActionResult> ImagePut(int id, [FromBody] FileDto model)
+        [HttpPut("products/{id}/image")]
+        public async Task<IActionResult> ImagePut(
+            int id,
+            [FromBody]FileDto model
+        )
         {
+            var fileName = model.UniqueName;
+            var filePath = $"{_hostingEnvironment.WebRootPath}\\Uploads\\{fileName}";
+
+            using (var ms = model.ReadAsStream())
+            using (var file = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite))
+            {
+                await ms.CopyToAsync(file);
+            }
+
+            await _productService.PartialUpdate(id, new ProductDtoPartial
+            {
+                UrlImage = fileName
+            });
+
             return NoContent();
         }
 
