@@ -2,7 +2,7 @@
 StoreAPI coding challenge for Applaudo Studios
 
 Collection StoreAPI - PostMan:
-https://documenter.getpostman.com/view/8166245/SVSPmmCe
+https://www.getpostman.com/collections/429d56b564f94a9e1e86
 
 Database dump:
 File in Git named: Database.sql
