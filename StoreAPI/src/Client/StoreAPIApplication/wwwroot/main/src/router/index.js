@@ -10,6 +10,7 @@ import ListBuyProducts from '@/components/products/listProducts'
 import ExampleIndex from '@/components/example/Index'
 import ExampleView from '@/components/example/View'
 import BuyProducts from '@/components/products/buyProducts'
+import MyProducts from '@/components/products/myProducts'
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ const routes = [
   { path: '/add-products', name: 'AddProducts', component: AddProducts },
   { path: '/products/:id/edit', name: 'EditProducts', component: EditProducts },
   { path: '/products/:id/buy', name: 'BuyProducts', component: BuyProducts },
+  { path: '/my-products', name: 'MyProducts', component: MyProducts },
   { path: '/manage-products', name: 'ManageProducts', component: ManageProducts },
   { path: '/products', name: 'ListProducts', component: ListProducts },
   { path: '/', name: 'ListBuyProducts', component: ListBuyProducts },

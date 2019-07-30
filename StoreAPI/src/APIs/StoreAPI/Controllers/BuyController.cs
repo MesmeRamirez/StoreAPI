@@ -22,5 +22,14 @@ namespace StoreAPI.Controllers
         {
             return Ok(await _buyService.Create(model));
         }
+
+        // GET 
+        [HttpGet("userProducts/{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            return Ok(
+                await _buyService.GetAll(id)
+                );
+        }
     }
 }

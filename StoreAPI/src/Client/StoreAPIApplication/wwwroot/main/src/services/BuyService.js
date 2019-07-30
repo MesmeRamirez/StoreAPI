@@ -12,6 +12,11 @@ class BuyService {
         return self.axios.post(`${self.baseUrl}userProducts`, model);
     }
 
+    getAll(id){
+        let self = this;
+        return self.axios.get(`${self.baseUrl}userProducts/${id}`);
+    }
+
 }
 
 export default BuyService

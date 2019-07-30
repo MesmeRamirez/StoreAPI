@@ -1,16 +1,13 @@
 <template>
   <el-row>
-    <el-col :span="10">
+    <el-col :span="12">
       <h1 @click="goTo('/')" style="">Boutique Party Store</h1>
     </el-col>
-    <el-col :span="4" class="text-center">
-      <el-input placeholder="Buscar .." suffix-icon="fa fa-search"></el-input>
-    </el-col>
-    <el-col :span="10" class="text-right user-options" style="text-align: right;">
+    <el-col :span="12" class="text-right user-options" style="text-align: right;">
       <a class="item" href="#/user-information">
         <i class="fa fa-user"></i>&nbsp;{{ user.Email }}
       </a>
-      <a class="item" href="#">
+      <a class="item" href="http://localhost:50847/Account/Logout">
         <i class="fa fa-sign-out"></i>
       </a>
     </el-col>

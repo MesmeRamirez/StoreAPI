@@ -29,7 +29,7 @@ export default {
       {
         icon: "star",
         text: "My Cart",
-        children: [{ icon: "list", text: "My Shoppings", path: "/example" }]
+        children: [{ icon: "list", text: "My Shoppings", path: "/my-products" }]
       },
       {
         icon: "wrench",

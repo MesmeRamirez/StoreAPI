@@ -1,15 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ModelStoreAPI.Dto;
 using PersistenceStoreAPI;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+using Newtonsoft.Json;
 using ModelStoreAPI;
-using Microsoft.AspNetCore.Hosting;
+
 namespace ServiceStoreAPI
 {
     public interface IBuyService
     {
         Task<bool> Create(UserPerProductCreateDto model);
+        Task<IEnumerable<UserPerProductListDto>> GetAll(String id);
     }
 
     public class BuyService : IBuyService
@@ -42,6 +47,36 @@ namespace ServiceStoreAPI
 
                 await _context.SaveChangesAsync();
 
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return result;
+        }
+
+        public async Task<IEnumerable<UserPerProductListDto>> GetAll(string id)
+        {
+            var result = new List<UserPerProductListDto>();
+
+            try
+            {
+                var query = (
+                            from p in _context.UserPerProduct
+                            from pr in _context.Product.Where(x => x.Id == p.ProductId)
+                            from u in _context.Users.Where(x => x.Id == p.UserId)
+                            where p.UserId.Equals(id)
+                            select new UserPerProductListDto
+                            {
+                                UserId = p.UserId,
+                                ProductId = p.ProductId,
+                                ProductName = pr.ProductName,
+                                Quantity = p.Quantity,
+                                Price = pr.Price
+                            }
+                            );
+                result = await query.ToListAsync();
             }
             catch (Exception e)
             {

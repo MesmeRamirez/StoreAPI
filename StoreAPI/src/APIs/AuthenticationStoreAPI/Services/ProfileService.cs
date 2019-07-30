@@ -30,7 +30,13 @@ namespace AuthenticationStoreAPI.Services
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.Surname, user.LastName)
-    };
+            };
+            var roles = _userManager.GetRolesAsync(user).Result;
+            // Seteamos el primer rol encontrado
+            if (roles != null && roles.Any())
+            {
+                claims.Add(new Claim(ClaimTypes.Role, roles.First()));
+            }
 
             context.IssuedClaims.AddRange(claims);
 
