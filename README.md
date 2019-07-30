@@ -18,9 +18,9 @@ Comments:
 
 URLs and ports:
 The URLs and ports are in the properties for each project and also in the appsettings.json file in each project.
-Authentication:
-API:
-Application:
+Authentication: AuthenticationStoreAPI(http://localhost:50847/)
+API: StoreAPI(http://localhost:50237/)
+Application: StoreAPIApplication(http://localhost:54500/)
 
 Authentication:
 The authentication uses de UserName for Login, not the email.
